@@ -1,0 +1,22 @@
+<?xml version="1.0"?>  
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.util.db.entity.Location" table="locations">
+		<id name="locationId" column="locationId">
+			<generator class="identity" />
+		</id>
+		<property name="locationDetail" column="locationDetail" />
+		<!-- <set name="depts" lazy="true" cascade="save-update"  inverse="true" > -->
+		 <set name="depts" lazy="true" table="department" > 
+			<key column="locationId" />
+			<one-to-many class="com.util.db.entity.Department" />
+		</set>
+	</class>
+	<!-- 
+	<query name="queryLocation">
+		<![CDATA[FROM Location where locationId<5]]>
+	</query>
+	 -->
+</hibernate-mapping>
