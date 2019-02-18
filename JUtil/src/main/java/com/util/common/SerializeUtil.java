@@ -3,7 +3,7 @@ package com.util.common;
 import java.io.*;
 
 /**
- *  序列化工具
+ * 序列化工具
  *
  * @author wulang
  * @version v1.0
@@ -29,7 +29,7 @@ public class SerializeUtil {
      * @return
      * @author: wulang
      * @date: 2017/12/1 10:34
-     * @modify by user: {修改人}  2017/12/1 10:34
+     * @modify by user: {修改人} 2017/12/1 10:34
      * @modify by reason:
      */
     public static void writeObject(Serializable obj) {
@@ -44,7 +44,7 @@ public class SerializeUtil {
      * @return
      * @author: wulang
      * @date: 2017/12/1 10:34
-     * @modify by user: {修改人}  2017/12/1 10:34
+     * @modify by user: {修改人} 2017/12/1 10:34
      * @modify by reason:
      */
     public static void writeObject(String path, Serializable o) {
@@ -69,7 +69,7 @@ public class SerializeUtil {
      * @return
      * @author: wulang
      * @date: 2017/12/1 10:34
-     * @modify by user: {修改人}  2017/12/1 10:34
+     * @modify by user: {修改人} 2017/12/1 10:34
      * @modify by reason:
      */
     public static <T> T readObject(Class<T> clazz) {
@@ -84,9 +84,10 @@ public class SerializeUtil {
      * @return
      * @author: wulang
      * @date: 2017/12/1 10:33
-     * @modify by user: {修改人}  2017/12/1 10:33
+     * @modify by user: {修改人} 2017/12/1 10:33
      * @modify by reason:
      */
+    @SuppressWarnings("all")
     public static <T> T readObject(String path, Class<T> clazz) {
         File file = new File(path);
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
@@ -96,6 +97,5 @@ public class SerializeUtil {
         }
         return null;
     }
-
 
 }

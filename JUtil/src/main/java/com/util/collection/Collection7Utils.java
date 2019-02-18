@@ -21,19 +21,19 @@ import java.util.*;
  */
 public class Collection7Utils {
 
-
     /**
      * 将容器中的数据转换成map
      *
-     * @param <K>        map.entry的key的类型
-     * @param <V>        map.entry的value的类型
-     * @param <F>        collection中实体类型
-     * @param <T>        map中存放的实体类型
+     * @param            <K> map.entry的key的类型
+     * @param            <V> map.entry的value的类型
+     * @param            <F> collection中实体类型
+     * @param            <T> map中存放的实体类型
      * @param collection 容器
      * @param function   转换规则
      * @return 返回的map永远不会为null;
      */
-    public static <K, V, F, T extends Map.Entry<K, V>> Map<K, V> transformCollectionToMap(Collection<F> collection, Function<F, T> function) {
+    public static <K, V, F, T extends Map.Entry<K, V>> Map<K, V> transformCollectionToMap(Collection<F> collection,
+            Function<F, T> function) {
         Map<K, V> map = Maps.newHashMap();
         if (CollectionUtils.isNotEmpty(collection)) {
             map = Maps.newHashMapWithExpectedSize(collection.size());
@@ -45,7 +45,6 @@ public class Collection7Utils {
         return map;
     }
 
-
     /**
      * 拆分链表
      *
@@ -54,7 +53,7 @@ public class Collection7Utils {
      * @return
      * @author: wulang
      * @date: 2017/11/28 21:09
-     * @modify by user: {修改人}  2017/11/28 21:09
+     * @modify by user: {修改人} 2017/11/28 21:09
      * @modify by reason:
      */
     public static <T> List<List<T>> splitCollection(Collection<T> list, Integer batch) {
@@ -82,12 +81,11 @@ public class Collection7Utils {
      * @return java.util.Map<K,java.util.List<V>>
      * @author wulang
      * @date 2018/1/17 21:03
-     * @modify by user: {修改人}  2018/1/17 21:03
+     * @modify by user: {修改人} 2018/1/17 21:03
      * @modify by reason:
      */
     public static <K, V, T> Map<K, List<V>> transformToMapWithListValue(Collection<T> collection,
-                                                                        Function<? super T, ? extends K> keyMapper,
-                                                                        Function<? super T, ? extends V> valueMapper) {
+            Function<? super T, ? extends K> keyMapper, Function<? super T, ? extends V> valueMapper) {
         Map<K, List<V>> map = Maps.newHashMap();
         List<V> valueList = null;
         if (org.apache.commons.collections4.CollectionUtils.isNotEmpty(collection)) {
@@ -106,18 +104,16 @@ public class Collection7Utils {
     }
 
     /**
-     * 将容器中的数据转换成map
-     * 将多个的value保存到Set
+     * 将容器中的数据转换成map 将多个的value保存到Set
      *
-     * @param <K>        map.entry的key的类型
-     * @param <V>        map.entry的value的类型
-     * @param <F>        collection中实体类型
+     * @param            <K> map.entry的key的类型
+     * @param            <V> map.entry的value的类型
+     * @param            <F> collection中实体类型
      * @param collection 容器
      * @return 返回的map永远不会为null;
      */
     public static <K, V, F> Map<K, Set<V>> transformToMapWithSetValue(Collection<F> collection,
-                                                                      Function<? super F, ? extends K> keyMapper,
-                                                                      Function<? super F, ? extends V> valueMapper) {
+            Function<? super F, ? extends K> keyMapper, Function<? super F, ? extends V> valueMapper) {
         Map<K, Set<V>> map = Maps.newHashMap();
         Set<V> valueSet = null;
         if (org.apache.commons.collections4.CollectionUtils.isNotEmpty(collection)) {
@@ -138,25 +134,22 @@ public class Collection7Utils {
     }
 
     /**
-     * 将容器中的数据转换成map
-     * 将多个的value保存的Map
+     * 将容器中的数据转换成map 将多个的value保存的Map
      * <p>
      * function 返回格式为 Map.Entry<K1, Map.Entry<K2, V>>
      *
-     * @param <K1>       map.entry的key的类型
-     * @param <K2>       map.entry的value的类型
-     * @param <V>        map.entry的value的类型
-     * @param <F>        collection中实体类型
+     * @param            <K1> map.entry的key的类型
+     * @param            <K2> map.entry的value的类型
+     * @param            <V> map.entry的value的类型
+     * @param            <F> collection中实体类型
      * @param collection 容器
      * @return 返回的map永远不会为null;
      */
     public static <K1, K2, V, F> Map<K1, Map<K2, V>> transformCollectionToMapWithMapValue(Collection<F> collection,
-                                                                                          Function<? super F, ? extends K1> keyMapper1,
-                                                                                          Function<? super F, ? extends K2> keyMapper2,
-                                                                                          Function<? super F, ? extends V> valueMapper) {
+            Function<? super F, ? extends K1> keyMapper1, Function<? super F, ? extends K2> keyMapper2,
+            Function<? super F, ? extends V> valueMapper) {
         Map<K1, Map<K2, V>> map = Maps.newHashMap();
         Map<K2, V> valueMap = null;
-        Map.Entry<K2, V> valueEntry = null;
         if (org.apache.commons.collections4.CollectionUtils.isNotEmpty(collection)) {
             map = Maps.newHashMapWithExpectedSize(collection.size());
             for (F from : collection) {
@@ -174,14 +167,13 @@ public class Collection7Utils {
     }
 
     /**
-     * 将map中的每个entry进行处理后的list;
-     * 将多个的value保存到Set
+     * 将map中的每个entry进行处理后的list; 将多个的value保存到Set
      *
      * @param map
      * @param function
-     * @param <T>      目标类型
-     * @param <K>
-     * @param <V>
+     * @param          <T> 目标类型
+     * @param          <K>
+     * @param          <V>
      * @return
      */
     public static <T, K, V> Set<T> transformMapToList(Map<K, V> map, Function<Map.Entry<K, V>, T> function) {
@@ -206,10 +198,11 @@ public class Collection7Utils {
      * @return
      * @author: wulang
      * @date: 2017/10/9 20:34
-     * @modify by user: {修改人}  2017/10/9 20:34
+     * @modify by user: {修改人} 2017/10/9 20:34
      * @modify by reason:
      */
-    public static <K1, K2, V1, V2> Map<K2, V2> transformMapToNewMap(Map<K1, V1> fromMap, Function<Map.Entry<K1, V1>, Map.Entry<K2, V2>> function) {
+    public static <K1, K2, V1, V2> Map<K2, V2> transformMapToNewMap(Map<K1, V1> fromMap,
+            Function<Map.Entry<K1, V1>, Map.Entry<K2, V2>> function) {
         Map.Entry<K1, V1> entry1 = null;
         Map.Entry<K2, V2> entry2 = null;
         Map<K2, V2> newMap = Maps.newHashMap();
@@ -224,7 +217,6 @@ public class Collection7Utils {
         }
         return newMap;
     }
-
 
     public static class MEntry<K, V> implements Map.Entry<K, V> {
         private K key;

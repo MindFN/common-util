@@ -13,7 +13,7 @@ import java.util.List;
  * @modifued reason:
  */
 public class TreeNode<T> {
-    private TreeNode parentTreeNode;
+    private TreeNode<T> parentTreeNode;
     private List<TreeNode<T>> childNodes;
     private T node;
 
@@ -22,16 +22,16 @@ public class TreeNode<T> {
         this.childNodes = Lists.newArrayList();
     }
 
-    public TreeNode(TreeNode parentTreeNode, List<TreeNode<T>> childNodes) {
+    public TreeNode(TreeNode<T> parentTreeNode, List<TreeNode<T>> childNodes) {
         this.parentTreeNode = parentTreeNode;
         this.childNodes = childNodes;
     }
 
-    public TreeNode getParentTreeNode() {
+    public TreeNode<T> getParentTreeNode() {
         return parentTreeNode;
     }
 
-    public void setParentTreeNode(TreeNode parentTreeNode) {
+    public void setParentTreeNode(TreeNode<T> parentTreeNode) {
         this.parentTreeNode = parentTreeNode;
     }
 
@@ -51,7 +51,7 @@ public class TreeNode<T> {
         this.node = node;
     }
 
-    public TreeNode appendChild(TreeNode treeNode) {
+    public TreeNode<T> appendChild(TreeNode<T> treeNode) {
         childNodes.add(treeNode);
         return this;
     }

@@ -16,10 +16,7 @@ import java.util.Map;
  */
 public class ObjectUtil {
     /**
-     * 检测对象为null
-     * <pron>
-     * -->对象不存在;对象为容器时size==0;对象为字符串时为"";
-     * </pron>
+     * 检测对象为null <pron> -->对象不存在;对象为容器时size==0;对象为字符串时为""; </pron>
      *
      * @param obj
      * @return
@@ -48,7 +45,7 @@ public class ObjectUtil {
      * @return
      * @author: wulang
      * @date: 2017/12/1 10:24
-     * @modify by user: {修改人}  2017/12/1 10:24
+     * @modify by user: {修改人} 2017/12/1 10:24
      * @modify by reason:
      */
     public static <T> T transformStringToTargetType(String source, Class<T> clazz) {
@@ -68,7 +65,7 @@ public class ObjectUtil {
      * @return
      * @author: wulang
      * @date: 2017/12/1 10:25
-     * @modify by user: {修改人}  2017/12/1 10:25
+     * @modify by user: {修改人} 2017/12/1 10:25
      * @modify by reason:
      */
     public static String String(Object obj) {
@@ -86,7 +83,7 @@ public class ObjectUtil {
      * @return
      * @author: wulang
      * @date: 2017/12/1 10:28
-     * @modify by user: {修改人}  2017/12/1 10:28
+     * @modify by user: {修改人} 2017/12/1 10:28
      * @modify by reason:
      */
     public static <T> T hasValue(T field, T replace) {
@@ -115,7 +112,7 @@ public class ObjectUtil {
      * @return
      * @author: wulang
      * @date: 2017/12/1 10:26
-     * @modify by user: {修改人}  2017/12/1 10:26
+     * @modify by user: {修改人} 2017/12/1 10:26
      * @modify by reason:
      */
     public static boolean isNegativeNum(Number number) {

@@ -13,6 +13,7 @@ import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.util.collection.Tree.TreeNode;
 import org.junit.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.annotation.Nullable;
 import java.sql.Timestamp;
@@ -27,14 +28,21 @@ import java.time.Instant;
  */
 public class TimeTest {
     @Test
-    public void testInstant(){
-        Retryer<TreeNode> retry= RetryerBuilder.<TreeNode>newBuilder().retryIfResult(new Predicate<TreeNode>() {
+    public void testInstant() {
+        Retryer<TreeNode> retry = RetryerBuilder.<TreeNode>newBuilder().retryIfResult(new Predicate<TreeNode>() {
             @Override
             public boolean apply(@Nullable TreeNode input) {
                 return input.getNode().equals("");
             }
         }).build();
-//        System.out.println(Timestamp.from(Instant.now()));
+        // System.out.println(Timestamp.from(Instant.now()));
+    }
+
+    public void testApplicationContext() {
+
+        new ClassPathXmlApplicationContext().close();
+        ;
+
     }
 
 }

@@ -7,8 +7,6 @@
  */
 package com.util.db;
 
-import com.util.db.entity.Department;
-import com.util.db.entity.Location;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -17,8 +15,6 @@ import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.io.InputStream;
 
 /**
  * @author wulang
